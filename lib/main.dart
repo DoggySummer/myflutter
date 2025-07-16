@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '하단바 예제',
-      home: MyHomePage(),
-    );
+    return MaterialApp(title: '하단바 예제', home: MyHomePage());
   }
 }
 
@@ -22,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // 각 탭에 보여줄 화면들
   final List<Widget> _pages = <Widget>[
-    Center(child: Text('홈 화면')),
+    HomeScreen(),
     Center(child: Text('설정 화면')),
   ];
 
@@ -41,14 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '홈',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: '설정',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: '홈'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: '설정'),
         ],
       ),
     );
